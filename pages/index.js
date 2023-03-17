@@ -54,7 +54,6 @@ const Home = () => {
         </Typography>
         <Stack direction={breakPoint_810 ? "column" : "row"} spacing={3} justifyContent="space-around" alignItems="center" marginTop={breakPoint_810 ? 5 : 10}>
           <Card
-            raised={true}
             variant="outlined"
             sx={{
               paddingY: 3,
@@ -72,7 +71,6 @@ const Home = () => {
             </Typography>
           </Card>
           <Card
-            raised={true}
             variant="outlined"
             sx={{
               paddingY: 3,
@@ -90,7 +88,6 @@ const Home = () => {
             </Typography>
           </Card>
           <Card
-            raised={true}
             variant="outlined"
             sx={{
               paddingY: 3,

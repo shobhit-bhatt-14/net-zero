@@ -1,9 +1,12 @@
 import { useState } from "react";
-import { Box, Button, IconButton, Link, Modal, Stack, Toolbar, useMediaQuery } from "@mui/material";
+import { Box, Button, Divider, IconButton, Link, Modal, Stack, Toolbar, useMediaQuery } from "@mui/material";
 import { AccountCircle, Menu } from "@mui/icons-material";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
   const [popup, setPopup] = useState(false);
+
+  const pathname = useRouter().pathname;
 
   const breakPoint_810 = useMediaQuery("(max-width: 810px)");
 
@@ -60,24 +63,27 @@ const Navbar = () => {
         left: 0,
         zIndex: 100,
         width: "100%",
-        paddingY: 3,
+        paddingY: 2,
         paddingX: 5,
-        background: "linear-gradient(to bottom , black 0%, transparent 100%)",
+        background: pathname == "/" ? "linear-gradient(to bottom , black 0%, transparent 100%)" : "#000",
         fontSize: 25,
       }}
     >
       <img src="/buddy.png" alt="logo" height="50" width="50" />
       <Stack direction="row" spacing={5}>
-        <Link href="/" underline="none" color="#fff" sx={{ ":hover": { color: "#0f0" } }}>
+        <Link href="/" underline="none" color={pathname == "/" ? "#f0f" : "#0ff"} sx={{ ":hover": { color: "#0f0" } }}>
           HOME
         </Link>
-        <Link href="/netzero" underline="none" color="#fff" sx={{ ":hover": { color: "#0f0" } }}>
+        <Divider orientation="vertical" flexItem />
+        <Link href="/netzero" underline="none" color={pathname == "/netzero" ? "#f0f" : "#0ff"} sx={{ ":hover": { color: "#0f0" } }}>
           NET ZERO
         </Link>
-        <Link href="/lithium" underline="none" color="#fff" sx={{ ":hover": { color: "#0f0" } }}>
+        <Divider orientation="vertical" flexItem />
+        <Link href="/lithium" underline="none" color={pathname == "/lithium" ? "#f0f" : "#0ff"} sx={{ ":hover": { color: "#0f0" } }}>
           LITHIUM
         </Link>
-        <Link href="/gh-bh" underline="none" color="#fff" sx={{ ":hover": { color: "#0f0" } }}>
+        <Divider orientation="vertical" flexItem />
+        <Link href="/gh-bh" underline="none" color={pathname == "/gh-bh" ? "#f0f" : "#0ff"} sx={{ ":hover": { color: "#0f0" } }}>
           GH/BH
         </Link>
       </Stack>
