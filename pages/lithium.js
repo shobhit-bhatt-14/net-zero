@@ -69,7 +69,7 @@ const Lithium = () => {
           <ListItem disableGutters>
             <ListItemText inset>
               <Typography variant="h6">
-                A battery's capacity decays with the amount of charge and discharge cycles, showing how long it will last. A battery should be reused (second life
+                A battery&apos;s capacity decays with the amount of charge and discharge cycles, showing how long it will last. A battery should be reused (second life
                 applications) or recycled once it has degraded to a point when it is no longer suitable for its intended application.
               </Typography>
             </ListItemText>
@@ -105,8 +105,8 @@ const Lithium = () => {
           <ListItem disableGutters>
             <ListItemText inset>
               <Typography variant="h6">
-                Because of the flammable liquid electrolyte and the release of thermal energy when the cathode material 'fatigues' after a certain number of cycles,
-                battery safety is a concern.
+                Because of the flammable liquid electrolyte and the release of thermal energy when the cathode material &apos;fatigues&apos; after a certain number of
+                cycles, battery safety is a concern.
               </Typography>
             </ListItemText>
           </ListItem>
@@ -245,7 +245,7 @@ const Lithium = () => {
           News related to latest projects and innovation of lithium happening in India
         </Typography>
 
-        <List >
+        <List>
           <ListItem disableGutters>
             <ListItemIcon>
               <Whatshot htmlColor="#F62817" />
@@ -308,9 +308,9 @@ const Lithium = () => {
           <ListItem disableGutters>
             <ListItemText inset>
               <Typography variant="h6">
-                In November 2022, the Indian governemnt sent a team of geologists to South America to "assess potential lithium deposits". The Indian government has
-                proclaimed that they have identified two lithium mines and one copper mine in Argentina and they are moving forward to acquiring it or taking long term
-                lease.
+                In November 2022, the Indian governemnt sent a team of geologists to South America to &quot;assess potential lithium deposits&quot;. The Indian government
+                has proclaimed that they have identified two lithium mines and one copper mine in Argentina and they are moving forward to acquiring it or taking long
+                term lease.
                 <center>
                   <img src="/fig_3.png" alt="lithium and copper mine" width="50%" />
                 </center>
@@ -341,7 +341,7 @@ const Lithium = () => {
                 & Kashmir and Rajasthan. However, the resource of lithium has not yet been augmented by GSI.
                 <br />
                 Researchers at the Atomic Minerals Directorate (AMD)for Exploration and Research, which is a constituent of Department Atomic Energy (DAE) has estimated
-                lithium reserves of 14,100 tonnes in a small patch of land surveyed in Southern Karnataka's Mandya district.
+                lithium reserves of 14,100 tonnes in a small patch of land surveyed in Southern Karnataka&apos;s Mandya district.
                 <br />
                 During the last five years, GSI carried out 20 projects on Lithium and associated elements in Andhra Pradesh, Arunachal Pradesh, Bihar, Chhattisgarh,
                 Himachal Pradesh, Jharkhand, Jammu & Kashmir, Madhya Pradesh, Meghalaya, Rajasthan.
