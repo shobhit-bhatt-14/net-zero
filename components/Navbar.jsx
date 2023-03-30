@@ -1,12 +1,21 @@
-import { useState } from "react";
+// react
+import { Fragment, useState } from "react";
+// mui
 import { Box, Button, Divider, IconButton, Link, Modal, Stack, Toolbar, useMediaQuery } from "@mui/material";
+// mui-icons
 import { AccountCircle, Menu } from "@mui/icons-material";
+// next
 import { useRouter } from "next/router";
+// next-auth
+import { useSession, signOut } from "next-auth/react";
 
 const Navbar = () => {
   const [popup, setPopup] = useState(false);
 
-  const pathname = useRouter().pathname;
+  const { data: session } = useSession();
+
+  const router = useRouter();
+  const pathname = router.pathname;
 
   const breakPoint_810 = useMediaQuery("(max-width: 810px)");
 
@@ -71,29 +80,37 @@ const Navbar = () => {
     >
       <img src="/buddy.png" alt="logo" height="50" width="50" />
       <Stack direction="row" spacing={5}>
-        <Link href="/" underline="none" color={pathname == "/" ? "#f0f" : "#0ff"} sx={{ ":hover": { color: "#0f0" } }}>
+        <Link href="/" fontSize={20} underline="none" color={pathname == "/" ? "#f0f" : "#0ff"} sx={{ ":hover": { color: "#0f0" } }}>
           HOME
         </Link>
         <Divider orientation="vertical" flexItem />
-        <Link href="/netzero" underline="none" color={pathname == "/netzero" ? "#f0f" : "#0ff"} sx={{ ":hover": { color: "#0f0" } }}>
+        <Link href="/netzero" fontSize={20} underline="none" color={pathname == "/netzero" ? "#f0f" : "#0ff"} sx={{ ":hover": { color: "#0f0" } }}>
           NET ZERO
         </Link>
         <Divider orientation="vertical" flexItem />
-        <Link href="/lithium" underline="none" color={pathname == "/lithium" ? "#f0f" : "#0ff"} sx={{ ":hover": { color: "#0f0" } }}>
+        <Link href="/lithium" fontSize={20} underline="none" color={pathname == "/lithium" ? "#f0f" : "#0ff"} sx={{ ":hover": { color: "#0f0" } }}>
           LITHIUM
         </Link>
         <Divider orientation="vertical" flexItem />
-        <Link href="/gh-bh" underline="none" color={pathname == "/gh-bh" ? "#f0f" : "#0ff"} sx={{ ":hover": { color: "#0f0" } }}>
+        <Link href="/gh-bh" fontSize={20} underline="none" color={pathname == "/gh-bh" ? "#f0f" : "#0ff"} sx={{ ":hover": { color: "#0f0" } }}>
           GH/BH
         </Link>
       </Stack>
       <Stack direction="row" spacing={2}>
-        <Button variant="contained" size="large" sx={{ borderRadius: 2, ":hover": { color: "#0f0" } }}>
-          LOGIN
-        </Button>
-        <Button variant="contained" size="large" sx={{ borderRadius: 2, ":hover": { color: "#0f0" } }}>
-          SIGNUP
-        </Button>
+        {session ? (
+          <Button onClick={() => signOut()} startIcon={<AccountCircle />} variant="contained" size="large" sx={{ borderRadius: 2, ":hover": { color: "#0f0" } }}>
+            PROFILE
+          </Button>
+        ) : (
+          <Fragment>
+            <Button onClick={() => router.push("/auth/login")} variant="contained" size="large" sx={{ borderRadius: 2, ":hover": { color: "#0f0" } }}>
+              LOGIN
+            </Button>
+            <Button onClick={() => router.push("/auth/signup")} variant="contained" size="large" sx={{ borderRadius: 2, ":hover": { color: "#0f0" } }}>
+              SIGNUP
+            </Button>
+          </Fragment>
+        )}
       </Stack>
     </Box>
   );
