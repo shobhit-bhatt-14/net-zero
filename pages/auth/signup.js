@@ -18,7 +18,7 @@ export default function SignUp() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const response = await axios.post("/api/users", { idNumber, email, password }).then((res) => res.data);
+    const response = await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/users`, { idNumber, email, password }).then((res) => res.data);
 
     if (response?.user) {
       router.push("/");
