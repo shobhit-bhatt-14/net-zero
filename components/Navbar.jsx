@@ -74,7 +74,7 @@ const Navbar = () => {
         width: "100%",
         paddingY: 2,
         paddingX: 5,
-        background: pathname == "/" ? "linear-gradient(to bottom , black 0%, transparent 100%)" : "#000",
+        background: "#000",
         fontSize: 25,
       }}
     >

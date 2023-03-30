@@ -6,9 +6,9 @@ const Home = () => {
 
   return (
     <Grid container>
-      <Grid item xs={12}>
-        <Box position={breakPoint_810 ? "relative" : "absolute"} top={0} left={0} sx={{ height: breakPoint_810 ? "auto" : "100vh", width: "100%", zIndex: 9 }}>
-          <img src="/bg.jpg" alt="bg" style={{ height: "100%", width: "100%", opacity: 1 }} />
+      <Grid item xs={12} position="relative">
+        <Box position={breakPoint_810 ? "relative" : "absolute"} top={0} left={0} sx={{ height: breakPoint_810 ? "auto" : "100%", width: "100%", zIndex: 0 }}>
+          <img src="/bg.jpg" alt="bg" style={{ height: "100%", width: "100%" }} />
         </Box>
         <Box
           display="flex"
