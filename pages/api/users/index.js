@@ -16,7 +16,7 @@ async function connectMongoDb() {
   return collection;
 }
 
-export default async function usershandler(req, res) {
+export default async function usersHandler(req, res) {
   try {
     if (req.method == "POST") {
       const collection = await connectMongoDb();
