@@ -6,6 +6,8 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { compareSync } from "bcryptjs";
 // mongodb
 const { MongoClient } = require("mongodb");
+// config
+import CONFIG from "../lib/config";
 
 async function connectMongoDb() {
   const uri = "mongodb+srv://netzeronow:netzeronow@upes-project.z5coumb.mongodb.net/?retryWrites=true&w=majority";
@@ -65,7 +67,7 @@ export const authOptions = {
       return session;
     },
   },
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: CONFIG.NEXTAUTH_SECRET,
 };
 
 export default NextAuth(authOptions);

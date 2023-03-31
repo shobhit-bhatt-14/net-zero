@@ -6,6 +6,8 @@ import { useState } from "react";
 import axios from "axios";
 // router
 import { useRouter } from "next/router";
+// config
+import CONFIG from "../api/lib/config";
 
 export default function SignUp() {
   const [idNumber, setIdNumber] = useState("");
@@ -18,7 +20,7 @@ export default function SignUp() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const response = await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/users`, { idNumber, email, password }).then((res) => res.data);
+    const response = await axios.post(`${CONFIG.API_BASE_URL}/users`, { idNumber, email, password }).then((res) => res.data);
 
     if (response?.user) {
       router.push("/");
