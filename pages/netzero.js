@@ -164,7 +164,7 @@ const NetZero = () => {
           </Card>
           <Card sx={{ width: "100%", padding: 1 }}>
             <Typography variant="h6" align="center">
-              Other renewable energy sources such as biomass and small hydro have also contributed to India's renewable energy growth.
+              Other renewable energy sources such as biomass and small hydro have also contributed to India&apos;s renewable energy growth.
             </Typography>
           </Card>
           <Card sx={{ width: "100%", padding: 1 }}>
