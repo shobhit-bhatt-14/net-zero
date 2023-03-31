@@ -40,7 +40,7 @@ export default async function usershandler(req, res) {
         }
       }
     } else if (req.method == "GET") {
-      res.status(400).json("Live");
+      res.status(200).json("Live");
     } else {
       res.status(400).json("Bad Request");
     }
