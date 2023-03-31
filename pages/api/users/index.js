@@ -39,6 +39,8 @@ export default async function usershandler(req, res) {
           res.status(201).json({ message: "Signup successful, try Login", user });
         }
       }
+    } else if (req.method == "GET") {
+      res.status(400).json("Live");
     } else {
       res.status(400).json("Bad Request");
     }
