@@ -18,7 +18,9 @@ async function connectMongoDb() {
 
 export default async function usersHandler(req, res) {
   try {
-    if (req.method == "POST") {
+    if (req.method == "GET") {
+      res.json("Live");
+    } else if (req.method == "POST") {
       const collection = await connectMongoDb();
 
       const { idNumber, email, password } = req.body;
@@ -32,20 +34,18 @@ export default async function usersHandler(req, res) {
           const salt = genSaltSync();
           const hashedPass = hashSync(password, salt);
 
-          const uniqueId = crypto.randomBytes(16).toString("hex");
+          const uniqueId = crypto.randomBytes(8).toString("hex");
 
           const user = await collection.insertOne({ idNumber, uniqueId, email, password: hashedPass });
 
-          res.status(201).json({ message: "Signup successful, try Login", user });
+          res.json({ message: "Signup successful, try Login", user });
         }
       }
-    } else if (req.method == "GET") {
-      res.status(200).json("Live");
     } else {
-      res.status(400).json("Bad Request");
+      res.json("Bad Request");
     }
   } catch (error) {
     console.log(error);
-    res.status(500).send("Internal server error");
+    res.send("Internal server error");
   }
 }
