@@ -28,10 +28,9 @@ export default function SignUp() {
   };
 
   return (
-    <Container component="main" maxWidth="xs" sx={{ display: "flex", height: "100%", alignItems: "center", justifyContent: "center", marginTop: 10 }}>
+    <Container component="main" maxWidth="xs" sx={{ display: "flex", height: "100%", alignItems: "center", justifyContent: "center" }}>
       <Box
         sx={{
-          marginTop: 8,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",

@@ -51,8 +51,8 @@ const Navbar = () => {
           <Link href="/lithium" underline="none" fontSize={20} padding={1} borderRadius={2} width="50%" textAlign="center" border="solid #000">
             LITHIUM
           </Link>
-          <Link href="/gh-bh" underline="none" fontSize={20} padding={1} borderRadius={2} width="50%" textAlign="center" border="solid #000">
-            GH/BH
+          <Link href="/ideas" underline="none" fontSize={20} padding={1} borderRadius={2} width="50%" textAlign="center" border="solid #000">
+            IDEAS
           </Link>
         </Stack>
       </Modal>
@@ -92,8 +92,8 @@ const Navbar = () => {
           LITHIUM
         </Link>
         <Divider orientation="vertical" flexItem />
-        <Link href="/gh-bh" fontSize={20} underline="none" color={pathname == "/gh-bh" ? "#f0f" : "#0ff"} sx={{ ":hover": { color: "#0f0" } }}>
-          GH/BH
+        <Link href="/ideas" fontSize={20} underline="none" color={pathname == "/ideas" ? "#f0f" : "#0ff"} sx={{ ":hover": { color: "#0f0" } }}>
+          IDEAS
         </Link>
       </Stack>
       <Stack direction="row" spacing={2}>
